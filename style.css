@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --main-color: rgb(255, 145, 0);
+  --sub-color-1: #fff;
+  --sub-color-2: rgb(44, 44, 44);
+  --win-color: rgb(77, 147, 55);
+  --over-color: rgb(147, 55, 55);
+  --placeholder-color: #757575;
+}
+
+/* Common
+=============== */
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+p {
+  font-size: 2rem;
+}
+
+.page {
+  display: grid;
+  grid-template: 1fr 2fr / 1fr;
+  height: 100vh;
+  background-color: var(--sub-color-2);
+
+  position: relative;
+}
+
+.form-item {
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;
+}
+
+.input {
+  text-align: center;
+  color: inherit;
+
+  border: 0.5rem solid var(--sub-color-1);
+  background: none;
+}
+
+.input::placeholder {
+  color: var(--placeholder-color);
+}
+
+.btn {
+  border: none;
+  transition: box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.btn--orange {
+  color: var(--sub-color-1);
+  background-color: var(--main-color);
+}
+
+.btn:hover {
+  box-shadow: 0 0 1rem var(--sub-color-1);
+}
+
+.text-white {
+  color: var(--sub-color-1);
+}
+
+/* Header
+=============== */
+.header {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  align-content: space-evenly;
+
+  border-bottom: 0.5rem solid var(--main-color);
+}
+
+.title {
+  font-size: 4rem;
+}
+
+.subtitle {
+  color: var(--sub-color-1);
+}
+
+/* Main
+=============== */
+.main {
+  display: grid;
+}
+
+.main__item {
+  display: grid;
+  grid-auto-rows: auto;
+  justify-items: center;
+  align-items: center;
+  align-content: space-evenly;
+}
+
+.main__item:last-child {
+  width: 50%;
+  margin: 0 auto;
+  grid-template: 1fr / repeat(2, 1fr);
+
+  font-size: 2rem;
+}
+
+.input-number {
+  padding: 4rem;
+  max-width: 300px;
+  font-size: 5rem;
+}
+
+.btn-check {
+  font-size: 2rem;
+  padding: 3rem 5rem;
+}
+
+/* Reset
+=============== */
+.btn-reset {
+  padding: 2rem;
+  font-size: inherit;
+  color: var(--sub-color-2);
+  background-color: var(--sub-color-1);
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+/* Popup
+=============== */
+.popup {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-evenly;
+
+  width: 100%;
+  max-width: 100rem;
+  height: 100%;
+  max-height: 50rem;
+  padding: 5rem;
+
+  border: 0.2rem solid var(--main-color);
+  background-color: var(--sub-color-2);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+}
+
+.layer::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.popup__text {
+  line-height: 5rem;
+  text-align: justify;
+  color: var(--sub-color-1);
+}
+
+.input-number-limit {
+  padding: 2.5rem;
+  max-width: 250px;
+  font-size: 4rem;
+}
+
+.btn-confirm {
+  font-size: inherit;
+  padding: 2.5rem 4.5rem;
+}
+
+.game-over {
+  font-size: 5rem;
+}
